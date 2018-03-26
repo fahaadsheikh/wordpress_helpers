@@ -60,7 +60,12 @@ class Social_Widget extends WP_Widget {
 
 		foreach ($this->icons as $key => $icon) :
 			if ( ! empty( $instance[$key] ) ) {
-				printf( '<a href="%s" target="_blank"><span class="%s" aria-hidden="true"></span></a>', $instance[$key], $icon );
+				printf( '<a href="%s" target="_blank">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-circle-thin fa-stack-2x"></i>
+					  <i class="fa %s fa-stack-1x"></i>
+					</span>
+					</a>', $instance[$key], $icon );
 			}
 		endforeach;
 
